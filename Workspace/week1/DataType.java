@@ -50,7 +50,7 @@ public class DataType {
    // byte i2 = 127;
    // short i3 = 30000;
     //char save the charator 要用' '開關引號
-   // char cC1 = 'a';
+   // char C1 = 'a';
 
     //boolean 只可以放true and false 不用開引號
     //int abe = 10 OK (variable 多變的 name) 
