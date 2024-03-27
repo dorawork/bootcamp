@@ -21,4 +21,11 @@ public class Helloworld {
   // int 數字用
   //charAt()
   //char character = y.charAt(2); // l
+  
+  //day 3 
+  //operator != 不是, if  {},else if 
+  //&& 及 
+  //    if (year1 % 4 == 0 && year1 % 100 != 0 || year1 % 400 == 0) { == 等於  及 &&  || 或者
+    // switch 要有BREAK
+    //9個工具 , String + PrIMITIVES
 }

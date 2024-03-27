@@ -14,10 +14,10 @@ public class Operator {
     e = e-1; //7
     e-= 1; //6
 
-    int predecrement = --e; //predecrement =5
+    int predecrement = --e; //predecrement =5 先減減再夜 兩件事 先放左 再放右邊
     System.out.println(predecrement);
 
-    int postdecrement = e--; //e=5 
+    int postdecrement = e--; //e=5  // 先放左  再減自己
     System.out.println(postdecrement);
     System.out.println(e); //e=4
     

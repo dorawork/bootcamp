@@ -27,5 +27,12 @@ s7 += "!";
   System.out.println (ch1);
   System.out.println (ch2);
   System.out.println (ch3);
+
+  String s2 = "abcdefg";
+  if (s2.charAt(0) =='a' && s2.charAt(s2.length() -1) =='g'){
+    System.out.println("yes");
+     } else {
+     System.out.println("no");
+  }
 }
 }
