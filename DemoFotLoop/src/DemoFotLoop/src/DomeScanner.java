@@ -1,4 +1,4 @@
-package Workspace.week1;
+package DemoFotLoop.src;
 
 import java.util.Scanner;
 

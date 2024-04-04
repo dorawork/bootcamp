@@ -1,4 +1,4 @@
-package Workspace.week1;
+
 
 public class DataType {
   public static void main(String[] args) {
@@ -55,6 +55,20 @@ public class DataType {
     //boolean 只可以放true and false 不用開引號
     //int abe = 10 OK (variable 多變的 name) 
     
+    // Conversion
+    int i1=100;
+    long l1 = i1 + 100; // i1 +100 ->int value long variable
+    System.out.println(l1); //200
+
+    double d3 =i1; //int -> double (OK) 細去大OK
+    double d4 = 10.2;
+    // i1 =d4; // double -> int (not OK) 大去細NO OK
+
+    float f3 = i1; //int-> float OK 變量放變量 安全性
+    float f4 = 10.2f; // 10.2 is a double vlue by default
+    // i1 =f4; // double -> int (NOT OK)
+
+
   }
 
 }
