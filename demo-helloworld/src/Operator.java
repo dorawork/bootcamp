@@ -20,6 +20,16 @@ public class Operator {
     int postdecrement = e--; //e=5  // 先放左  再減自己
     System.out.println(postdecrement);
     System.out.println(e); //e=4
+
+    String str = "";
+    for (byte i =127; i < 128; i++){
+      str += i;
+      if (i <0){
+        break;
+      }
+
+    }
+    System.out.println(str);
     
   }
 }

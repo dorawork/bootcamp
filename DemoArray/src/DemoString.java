@@ -1,5 +1,3 @@
-
-
 public class DemoString {
   public static void main(String[] args) {
     System.out.println("Hello, World!");
@@ -25,7 +23,7 @@ public class DemoString {
     result = s.substring(2);
     System.out.println(result);// llo
 
-    // lowercase()
+    // toLowercase()
     System.out.println("HElLO".toLowerCase()); // hello
     // toUpperCase()
     System.out.println("HEllo".toUpperCase()); // HELLO
@@ -54,5 +52,21 @@ public class DemoString {
 
     System.out.println("hello".equals("Hello")); //false
     System.out.println("hello".equalsIgnoreCase("Hello"));// true
+ 
+    System.out.println (s.charAt(2));
+
+
+        // Searching
+        char[] characters = new char[] {'a', 'b', 'e', '!'};
+        // check if the array contains char '!' -> true/ false
+        boolean result1 = true;
+       
+        for (int i = 0; i < characters.length; i++) {
+          if (characters[i] == '!') {
+            result1 = false;
+            break;
+          }
+        }
+        System.out.println(result1);
   }
 }

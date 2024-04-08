@@ -1,7 +1,5 @@
 package questions;
 
-import com.azul.crs.client.Result;
-
 public class JavaQuest6 {
   /**
    * Expected output:

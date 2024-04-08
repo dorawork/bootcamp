@@ -1,6 +1,5 @@
-package DemoArray;
 
-public class  {
+public class domeo  {
 
   public static void main(String[] args) {
     System.out.println("Hello, World!");
@@ -56,6 +55,4 @@ public class  {
     System.out.println("hello".equals("Hello")); //false
     System.out.println("hello".equalsIgnoreCase("Hello"));// true
   }
-}
-  
 }

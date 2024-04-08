@@ -21,23 +21,23 @@ public class JavaQuest_paul {
     // Primitive types and operators
 
     System.out.println("I am going to add two numbers together:");
-    int A1 = 31;
-    int A2 = 42;
+    int A111 = 31;
+    int A222 = 42;
 
     // declare the second one
     // code here ...
-    System.out.println("The first one: " + A1);
-    System.out.println("The second one: " + A2);
+    System.out.println("The first one: " + A111);
+    System.out.println("The second one: " + A222);
 
     // Add two numbers and print it out
     // code here ...
-    int sum = A1 + A2;
+    int sum = A111 + A222;
     System.out.println("The sum is " + sum);
 
     // subtraction
     // code here with tips, pls fix ...
     // subtract = first - second
-    int A3 = A2 - A1;
+    int A3 = A222 - A111;
     System.out.println("The subtraction result is " + A3);
 
     // another sum

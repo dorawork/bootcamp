@@ -1,18 +1,27 @@
-## Getting Started
+Bootcamp 2403 Java Repo
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Week 1 + 2
 
-## Folder Structure
+- Date Type (8 primitives + 8 Wrapper Classes + String) *****
+-- Converstion (autobook, unbox, upcast, downcast, overflow, precision loss)
+--- String methods (Lark Notes)
+-- Operators (+,-,*,/,%)
+-- Comparsion Operators (>,<,>=,<=,==,!=)
+-- If , else if, else
+-- for loop
+-- Static method (input parameter, method signature, return tpye)
+-- array (for loop, index)
 
-The workspace contains two folders by default, where:
+--單數 / 雙數 
+--找最大數/ 最細數
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+ int a = 3;
+ int b = 10;
+ int max = a;
+ if (b > a ){
+   max = b;
+   int a = 123
+   integer v = a;
+   
+ }
+ 
