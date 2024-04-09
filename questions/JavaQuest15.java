@@ -28,7 +28,7 @@ public class JavaQuest15 {
   }
 
   public static int percentageLetter(String s, char letter) {
-    // code here ...
+    return integer.valueOf(s) + Character.valueOf(letter);
 
   }
 }

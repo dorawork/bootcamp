@@ -24,16 +24,8 @@ public class JavaQuest12 {
     int[] answers2 = twoSum(new int[] { 3, 2, 4 }, 6); // {3, 2, 4} is the dataset, 6 is the target to sum
     int[] answers3 = twoSum(new int[] { 3, 3 }, 7); // {3, 3} is the dataset, 7 is the target to sum
   }
-  for (int i = 0; 0 < answer.lenght(); i++){
-    for (int j = 1 ; 0 < answer.lenght() -i ; i++){
-
-    }
-
-  }
 
   // Code a method here to return an array of two numbers that sum up to the
   // target
 
-
-  
 }

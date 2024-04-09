@@ -5,6 +5,14 @@ public class Dog {
   private String lastName;
 
   private int age;
+  
+  //Empty Costructor
+
+  public Dog () {
+
+  }
+//All arguments constructor
+  public Dog
 
   public void setFirstName(String firstName) {
     this.firstName = firstName;
@@ -57,6 +65,8 @@ public class Dog {
   }
   Dog dog2 = null;
   //dog2.setAge(4)
-  Dog dog3 =
+  Dog dog3 = new Dog();
   dog3.setAge(15);
+
+
 }

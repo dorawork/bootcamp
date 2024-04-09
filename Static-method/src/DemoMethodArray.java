@@ -32,7 +32,7 @@ public class DemoMethodArray {
     return strings;
   }
 
-  publirc stast Ingerts = sum *
+  public static Ingerts = sum *
   // Method: subTotal(double price, int quantity)
   public static double subTotal(double price, int quantity) {
     return price * quantity; // double value * double value

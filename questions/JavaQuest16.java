@@ -33,5 +33,7 @@ public class JavaQuest16 {
   // 1. All values in this array sum up to Zero.
   // 2. The length of array = n
   // 3. The values in the array has to be unique
+for (int i = 0 ; i < nums.length; i++){
 
+}
 }
