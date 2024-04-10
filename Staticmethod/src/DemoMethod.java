@@ -1,7 +1,7 @@
 public class DemoMethod {
 
-  // static method
-  // void is a return type, representing it should not return anything.
+  // static method 入口
+  // void is a return type(已經return nothiny), representing it should not return anything. 
   public static void main(String[] args) {
     System.out.println("hello");
     // 1 + 3 = ?
@@ -11,7 +11,7 @@ public class DemoMethod {
 
     // call method
     result = sum(1, 3);
-    result2 = sum(2, 5);
+    result2 = sum(2, 5);//51行sum
 
     sum(1.3, 1.4); //
     System.out.println(sum("1", "3")); // 4
@@ -43,15 +43,17 @@ public class DemoMethod {
 
   }
 
-  // static method
-  // "sum" is a method name
-  // "(int x, int y)" is declaration of input parameters for methods
+  // static method 工具箱-入口
+  // "sum" is a method name  參數
+  // "(int x, int y)" is declaration of input parameters for methods 聲明
   // "int" is also a return type.
   // keyword "return" : for all non-void scenario
   public static int sum(int x, int y) {
     int z = x + y;
-    return z;
+    return z; //出口 -> return
   }
+  //long -> int upclass
+  //short -> (short) overflow 精度損失
 
   // subtraction
   public static int substract(int x, int y) {
@@ -59,7 +61,7 @@ public class DemoMethod {
     return x - y; // int value - int value -> int value
   }
 
-  // Method Definition: Method Name + Input Parameters (type & no. of parameter)
+  // Method Definition: Method Name + Input Parameters (type & no. of parameter) 條件
   public static double sum(double x, double y) {
     return x + y; // double value + double value -> double value
   }
@@ -79,7 +81,7 @@ public class DemoMethod {
   }
 
   public static double area(double radius) {
-    return radius * radius * Math.PI; // bug
+    return radius * radius * Math.PI; // bug double不能加減成除
   }
 
   public static double area(String s, double x) {

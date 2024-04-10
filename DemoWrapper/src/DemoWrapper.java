@@ -82,7 +82,7 @@ public class DemoWrapper {
       int i5 = 12;
       Long l5 = (long) i5; // int -> long (upcast) -> Long (autobox)
   
-      // Float.valueOf()
+      // Float.valueOf() OBJECT 常用
       Float f2 = Float.valueOf("1.0");
       // f2.compareTo(...) -> 0,-1,1
       // f2.equals(...) -> true, false

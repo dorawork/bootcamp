@@ -28,7 +28,12 @@ public class JavaQuest15 {
   }
 
   public static int percentageLetter(String s, char letter) {
-    return integer.valueOf(s) + Character.valueOf(letter);
-
+    int count = 0;
+    for (int i = 0; i <s.length();i++){
+      if (s.charAt(i) == letter){
+        count++;
+      }
+    }
+      return count;
+    }
   }
-}

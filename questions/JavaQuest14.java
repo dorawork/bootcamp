@@ -40,10 +40,13 @@ public class JavaQuest14 {
   // Code a method here to return true if the integer is palindrome, otherwise
   // false
   public static boolean palindrome(int num) { //
-    if (num < 0){
-      
+    if (Integer x = Integer.valueOf(num)){
+      return true;
+    }else{
+      return false;
     }
-    return false;
+   
+
     }
 //Integer.valueOf(x)
   }

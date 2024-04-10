@@ -53,5 +53,18 @@ public class String1 {
     } else {
       System.out.println("no");
     }
+
+    //indexOf
+    //String
+    String str2 = "Hello, World!";
+    int index =  str2.indexOf('o');//print 4
+    int index1 =  str2.indexOf('x');// print -1 (not found)
+    int index2 = str.indexOf("Wordld"); //print 7 (數字)
+
+    //compare to (String another string)
+    String str3 = "apple";
+    String str4 = "banana";
+
+    int result = str3.compareTo(str4);//result = -1 negative
   }
 }

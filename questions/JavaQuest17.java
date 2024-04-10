@@ -23,6 +23,9 @@ public class JavaQuest17 {
   // finish the code
   // Hints : int -> String -> array
   public static int minimum35Number(int num) {
+    
+    return z;
+
     // code here ...
   }
 }

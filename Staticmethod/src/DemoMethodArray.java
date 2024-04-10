@@ -1,10 +1,11 @@
 public class DemoMethodArray {
 
   public static void main(String[] args) {
-    double[] prices = new double[] {2.0, 3.2, 5.1};
+    double[] prices = new double[] {2.0, 3.2, 5.1};//array
     int[] quantities = new int[] {2, 4, 5};
 
     double totalAmount = total(prices, quantities);
+
     System.out.println("totalAmount=" + totalAmount); // 4 + 12.8 + 25.5
   }
 
