@@ -22,6 +22,14 @@ public class JavaQuest18 {
   private static boolean isPalindrome(String s) {
     // hints : if a String is Palindrome , return true
     //
+    int left = 0;
+    int right = s.length() -1;
+    while (left < right){
+      if(s.charAt(left) != s.charAt(right)){
+        return false;
+      }left++;
+      right--;
+    }
     return true;
   }
 

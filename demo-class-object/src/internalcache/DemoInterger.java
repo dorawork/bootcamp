@@ -4,7 +4,7 @@ public class DemoInterger {
 
   public static void main(String[] args) {
     
-  //SUPPORT - 127內
+  //SUPPORT - 0-127內
   Integer i1 = Integer.valueOf(127);
   Integer i2 = Integer.valueOf(127);
   System.out.println(i1 == i2); //true

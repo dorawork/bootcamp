@@ -2,7 +2,7 @@ public class d {
 
   public static void main(String[] args) {
     System.out.println("Hello");
-    car c = new car(); // c -> object reference =address
+    Car c = new Car(); // c -> object reference =address
     c.setColor("RED");
     c.setSpeed(80.0d);
     c.setCapacity(432);

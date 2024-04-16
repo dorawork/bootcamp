@@ -23,8 +23,13 @@ public class JavaQuest17 {
   // finish the code
   // Hints : int -> String -> array
   public static int minimum35Number(int num) {
-    
-    return z;
+    String A =String.valueOf(num);
+    char[] newstr = new char [A.length()];
+    //check charAt ->String -> char 數字數
+    String nums = String.valueOf(num);
+    for (int i = 0; i < A.length();i++){
+      char B = A.charAt(i);   }
+
 
     // code here ...
   }

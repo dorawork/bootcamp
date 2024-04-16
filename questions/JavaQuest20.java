@@ -28,7 +28,7 @@ public JavaQuest20 (String s, String goal){
 
   public static boolean rotateString(String s, String goal) {
     // code here ...
-    if (s.length() == goal.length()) {//長度?
+    if (s.length() -1 == goal.length()) {
       return true;
     }
     return false;

@@ -7,13 +7,13 @@ public class Order {
 
   private String orderNo;
 
-  private Item[] items;
+  private Item[] items; //arrays
 
-  public Order(String orderNo) {
+  public Order(String orderNo, Item[] items) {
     this.orderNo = orderNo;
-    this.items = new Item[0];
+    this.items = items;
   }
-
+//唔想比人知ARRATY
   public double total(){
     BigDecimal total = BigDecimal.valueOf(0.0d){
       for (int i = 0; i < items.length; i++){

@@ -1,4 +1,4 @@
-package stringbuilder;
+
 
 public class DemoSB{
   public static void main(String[] args) {
@@ -49,7 +49,7 @@ public class DemoSB{
     System.out.println(result10);
     System.out.println(sb4.toString());
     System.out.println(sb4.chatAt(1));
-    System.out.println(sb4.));
+    System.out.println(sb4.);
 
     if (sb5.compareTO )
 
