@@ -13,7 +13,7 @@ import java.util.*;
  * Return of the Jedi 8.4 1983
  * Star Wars 8.7 1977
  */
-class Movie {
+class Movie implements Comparable<Movie>{
     private double rating;
     private String name;
     private int year;
@@ -37,6 +37,12 @@ class Movie {
     public int getYear() {
         return year;
     }
+
+    @Override
+    public int compareTo(Movie m1){
+        return this.getYear() > m1.getYear() ? -1
+        : 1;
+  }
 }
 
 // Driver class

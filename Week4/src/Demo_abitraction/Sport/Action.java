@@ -5,10 +5,10 @@ public interface Action {
   void walk(); //冇實體
 
   //Jave 8 
-  default void swim(){ //intsance method by inheritance
+  default void swim(){ //intsance method by inheritance 自動繼承
     System.out.println("Default method: swim...");
   }
-  static void sleep(){
+  static void sleep(){//要自己寫 普通CALSS
     System.out.println("static method : sleep...");
 
   }

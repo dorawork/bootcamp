@@ -5,6 +5,8 @@ class ClassA {
     public static int someOtherNumber = 99;
     // 2
     public final String someString = initSomeString();
+
+    
   
     // 1.2
     // one static initialization block to print Something here

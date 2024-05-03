@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class SortByColor implements Comparator<Ball> {
 
-  @Override
+  @Override // 第一個方法 有條件
   public int compare(Ball b1, Ball b2) {
     return b1.getColor().name().charAt(0) > b2.getColor().name().charAt(0) ? -1
         : 1;
@@ -24,11 +24,11 @@ public class SortByColor implements Comparator<Ball> {
 
 
     int random = new Random().nextInt(2); // 0 or 1 抽獎 生成0或1的隨機數
-    Comparator<Ball> formula = null; //BALL變成NULL
+    Comparator<Ball> formula = null; //BALL變成NULL, 第二個方法 及 條件
     if (random == 0){
-      formula = new SortByColor();// 0 = 創Color
+      formula = new SortByColor();// 0 = 條件:Color
     } else if (random == 1){
-      formula = new ShortBySize();// 0 = 創Color
+      formula = new ShortBySize();// 1 = 條件:Size
     }
     Collections.sort(balls, formula);
     System.out.println(balls);

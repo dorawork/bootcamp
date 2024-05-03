@@ -1,4 +1,4 @@
-package src.demo_list;
+package demo_list.demo_list;
 
 import java.util.Objects;
 

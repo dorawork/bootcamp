@@ -1,11 +1,12 @@
-package src.demo_list;
+package demo_list;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 /* import Customer.Order; */
-
+ 
 public class DemoHashMap {
 
   public static void main(String[] args) {
@@ -50,32 +51,29 @@ public class DemoHashMap {
     for (Map.Entry<String, Integer> map : mapper.entrySet()) {
       sum += map.getValue();
     }
-    System.out.println("sum=" + sum);
+    System.out.println("sum=" + sum); //57
 
-    int sum1 = 0;
-    for (Map.Entry<String, Integer> abc : mapper.entrySet()) {
-      sum1 += abc.getValue();
-    }
-    System.out.println("sum1=" + sum1);
-
+    HashMap<Customer, Integer>ageMap = new HashMap<>();
+    ageMap.put(new Customer("John"), 13); //C ustomer加左有寫Hashcode可以再放資料入去 
+    ageMap.put(new Customer("John"),17); //拎到最新的是17歲
+    System.out.println(ageMap.get(new Customer("John"))); //17
+    //如果冇落Hashcode = null, 因為系統當佢兩個新客人, put address 不一樣 hashcode不一樣
+    //加了後才知道一樣名是一樣的customer
+    //Set底層是Map所以沒有排序
+    System.out.println(ageMap.size());//2
+    //
     //為甚麼他會知道Vincent是同一個??因為 HashCode 是一樣
     //Vincent HashCode來自 String  的 Method override
     //否則HashCode是Address
     //put是for loop 在check Vincent存不存在, 不存在insert, 存在override
     //有if 是否一樣HashCode
-    /*
-     * HashMap<Customer, Integer>agaMap =new HashMap<>();
-     * ageMap.put(new Customer("John"), 13);
-     * ageMap.put(new Customer("John"), 17);
-     * System.out.println(ageMap.get(new Customer("John")))//null;
-     * 
-     * System.out.println(agaMap.size());// 2
-     */
-
-    // key ->entrySet 全部野
 
     HashMap<Customer, ArrayList<Order>> orderMap = new HashMap<>();
+    // John -> order 1: 100, order 2: 250
+    // Vincent -> order: 1200, order 2: 20, order 3: 88
 
+    // totalOrderAmount=1658
+    
     ArrayList<Order> orders = new ArrayList<>();
     orders.add(new Order(100));
     orders.add(new Order(250));
@@ -89,10 +87,7 @@ public class DemoHashMap {
 
     orderMap.put(new Customer("Vincent"), orders2);
 
-    // John -> order 1: 100, order 2: 250
-    // Vincent -> order: 1200, order 2: 20, order 3: 88
 
-    // totalOrderAmount=1658
     // entrySet()
     sum = 0;
     for (Map.Entry<Customer, ArrayList<Order>> entry : orderMap.entrySet()) { // entrySet() -> entry -> key and value

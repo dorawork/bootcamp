@@ -11,7 +11,7 @@ public interface Shape {
   // You can only define "public static final" variable in interface
   // public static final String s = "hello";
 
-  String s = "hello"; // 等於第8行
+  String s = "hello"; // 等於#12
 
   BigDecimal PI = BigDecimal.valueOf(Math.PI);
 

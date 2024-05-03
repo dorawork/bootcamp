@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import src.demo_list.Order;
 
@@ -26,8 +30,25 @@ public class Customer2 {
       }
     }
 
-    // Polymorphism (多型態)
-    // 未抄得切
+    // Polymorphism
+    // List (ArrayList)
+    List<String> ss = new ArrayList<>();
+    // ss object reference can only point to the methods that comply with List interface
+    ss.add("hello");
+    ss.remove(0);
+    ss.add("abc");
+    System.out.println(ss.get(0));
+
+    // Set (HashSet)
+    Set<String> ss2 = new HashSet<>();
+    ss2.add("hello");
+    ss2.remove("hello");
+    System.out.println(ss2.size()); // 0
+
+    // Map (HashMap)
+    Map<String, String> stringMap = new HashMap<>();
+    stringMap.put("John", "ABC");
+    System.out.println(stringMap.get("John"));
 
     Collection<String> cs = new ArrayList<>();
     cs.add("hello");

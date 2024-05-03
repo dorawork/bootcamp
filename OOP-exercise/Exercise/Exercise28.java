@@ -13,6 +13,7 @@ import java.util.*;
  */
 // A class 'Movie' that implements Comparable
 class Movies {
+    
     private double rating;
     private String name;
     private int year;
@@ -37,7 +38,6 @@ class Movies {
         return year;
     }
 }
-
 // Driver class
 class Exercise28 {
     public static void main(String[] args) {

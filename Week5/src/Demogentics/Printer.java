@@ -1,0 +1,24 @@
+package Demogentics;
+
+public class Printer<T> { //藍圖 會橫向
+
+  private T data;
+
+  public Printer(T data) {
+    this.data = data;
+  }
+
+  public void print() {
+    System.out.println((data.toString())); // T -> Object.class
+  }
+
+  public static void main(String[] args) {
+
+    Printer<String> ps = new Printer<>("hello");//compile-time check
+    ps.print(); // String.class -> toString()
+
+    Printer<Integer> ip = new Printer<>(3);//compile-time check
+    ip.print();
+  }
+
+}

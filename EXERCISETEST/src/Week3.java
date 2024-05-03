@@ -2,6 +2,14 @@ package EXERCISETEST.src;
 
 public class Week3 {
 
+  private int ammount;
+
+  public Week3(int ammount){
+    this.ammount=ammount;
+  }
+
+  public String toString;
+
   public static void main(String[] args) {
     String str1 = "hello1";
     String str2 = "hello2";

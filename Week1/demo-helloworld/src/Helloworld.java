@@ -29,6 +29,6 @@ public class Helloworld {
   //&& 及 
   //    if (year1 % 4 == 0 && year1 % 100 != 0 || year1 % 400 == 0) { == 等於  及 &&  || 或者
     // switch 要有BREAK
-    //9個工具 , String + PrIMITIVES  % <--找餘數
+    //9個工具 , String + Primitive  % <--找餘數
     //唔可以用= variable or value
   }

@@ -1,11 +1,11 @@
-package src.demo_list;
+package demo_list;
 
 public class Order {
 
   private int amount;
 
   public Order(int ammount){
-    this.amount= amount;
+    this.amount= amount;  
   }
 
   public int getAmount(){

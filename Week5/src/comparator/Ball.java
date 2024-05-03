@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Collections;
 import java.util.LinkedList;
 
-public class Ball implements Comparable<Ball> { // this ball 比較 #52 一定要寫
+public class Ball implements Comparable<Ball> { // this ball 比較 #52 一定要寫合約
 
   private Color color;
   private double size;
