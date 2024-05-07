@@ -1,0 +1,101 @@
+Create a table named "Product" with the following columns:
+
+- id (integer)
+- name (varchar, maximum length 255)
+- price (decimal, 10 digits in total with 2 decimal places)
+- description (text)
+- created_at (timestamp, default current timestamp)
+
+Insert three sample products into the "Product" table you created in MySQL:
+Product 1:
+Name: "Laptop"
+Price: $999.99
+Description: "High-performance laptop with SSD storage."
+Created_at: Current timestamp
+Product 2:
+Name: "Smartphone"
+Price: $599.50
+Description: "4G smartphone with advanced camera features."
+Created_at: Current timestamp
+Product 3:
+Name: "Headphones"
+Price: $79.99
+Description: "Wireless headphones with noise-canceling technology."
+Created_at: Current timestamp
+
+-- Query 
+Select and display all products from the "Product" table sorted by name in ascending order.
+
+Select and display the product with the highest price from the "Product" table.
+
+-- Tip: max()
+Select and display the count of products in the "Product" table.
+
+
+
+-- Tip: count()
+Select and display all products from the "Product" table where the name contains the word "laptop" 
+(case-insensitive).
+
+-- Tips: lower()
+Select and display the average price of all products in the "Product" table.
+
+-- tips: avg()
+Select and display the product with the earliest created_at timestamp from the "Product" table.
+
+-- tips: limit
+Select and display the sum of prices for all products in the "Product" table. 
+Alias the sum result as "Total Price" in the output.
+
+-- tips: sum()
+Select and display the lowest price among products with names containing the word "phone" (case-insensitive). 
+Alias the max price result as "Max Price for Phones" in the output.
+
+-- tips: min()
+Select and display all products from the "Product" table where the description contains the word "wireless" (case-insensitive). 
+Alias the "description" column as "Product Description" in the output.
+-- tips: lower() and like
+
+
+2. create a new table named "Sales" with the following columns:
+
+id (integer)
+product_id (integer)
+product_name (varchar, maximum length 255)
+unit_price (decimal, 10 digits in total with 2 decimal places)
+quantity_sold (integer)
+discount_amount (decimal, 10 digits in total with 2 decimal places)
+tax_rate (decimal, 5 digits in total with 2 decimal places)
+shipping_cost (decimal, 10 digits in total with 2 decimal places)
+handling_fee (decimal, 10 digits in total with 2 decimal places)
+Insert three sales records into the "Sales" table:
+Sale 1:
+  id: 1
+  product_id: 1
+  product_name: "Laptop"
+  unit_price: $999.99
+  quantity_sold: 2
+  discount_amount: $0.00
+  tax_rate: 5%
+  shipping_cost: $10.50
+  handling_fee: $5.25
+Sale 2:
+  id: 2
+  product_id: 2
+  product_name: "Smartphone"
+  unit_price: $599.50
+  quantity_sold: 5
+  discount_amount: $25.75
+  tax_rate: 7.5%
+  shipping_cost: $5.75
+  handling_fee: $3.25
+Sale 3:
+  id: 3
+  product_id: 3
+  product_name: "Headphones"
+  unit_price: $79.99
+  quantity_sold: 10
+  discount_amount: $5.00
+  tax_rate: 5%
+  shipping_cost: $2.99
+  handling_fee: $1.50

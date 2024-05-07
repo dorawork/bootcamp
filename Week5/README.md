@@ -11,6 +11,18 @@ Set :pesend 資料庫上東西datebase, 冇重複 REMOVE DUPLICATED
 Map.add put 
 Linked list 用複雜既method, 右邊決定底層  ARRAY?LINKEDLIST?  係入面搵野  while loop 
 List 使用.add + remove
+*****
+Thread-safe
+concurrent 同時間
+*****
+
+Atomicity -> 原子性 安全 慢
+
+stringbuilder - > 捉隻STRING不停放野入去
+
+-「屬性」（attributes）對於一個名為「Person」的類別，它的屬性可以包括「姓名」、「年齡」、「性別」等。
+object reference -> object address 空指針
+
 
      - type 轉變
     // int -> Integer (autobox)
@@ -64,10 +76,39 @@ List 使用.add + remove
        -- .concat (合拼)
        -- .compareToIgnoreCase 比較英文字次序
        -- .collect (Collectors.toList()); 收尾
-
+-----------------------------------------------------------
        flattendList & Map
        改變結構 e.size
        變 1個
+------------------------------------------------------------
+       Factory Pattern / Builder Pattern
+
+
+
+---------------------------------------------------------------
+       Thread (不安全) 快 & 慢 1條KEY 1個人入鎖門再出, 全部人入唔洗鎖門
+       ArrayList -> List 
+       -- synchronized (保护共享资源) 功能鎖門
+       -- try // 有JOIN先行, 最後行MAIN
+       -- .join();
+
+       USD 簡寫 更改時唔洗太多
+
+       --------------------------
+
+       non-relational model 
+
+       超市購物車
+       信用卡找數後結餘
+       客投訴 / 資產損失 -> databases
+       快 cookies /mobre
+       跨sever update, 儲蓄戶口 -> 信用卡
+       另一條team確認後, 再找
+       ascending（升序）和descending（降序）
+       driver 需要太多時間 會慢
+
+       ----------------------------
+       MySQL
 
 
 

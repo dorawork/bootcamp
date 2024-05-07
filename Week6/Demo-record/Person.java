@@ -1,6 +1,17 @@
 
 public record Person(String name, int age) {
 
+  private static int x= 10;
+
+  private static int getX() {
+    return x;
+  }
+
+  @Override
+  public String name(){
+    return "hello";
+  }
+
   public static void main(String[] args) {
     //no empty constructor - all args
     Person p1 = new Person("Vincent", 13);
@@ -16,6 +27,6 @@ public record Person(String name, int age) {
     System.out.println(p1.age);
 
     //no setter
+
   }
-  
 }

@@ -1,18 +1,17 @@
 
 public interface FurnitureFactory {
 
-Chair createChair();
+  Chair createChair();
 
-Sofa createSofa();
+  Sofa createSofa();
 
-public static FurnitureFactory create(Style style)throws Exception{
-switch (style) {
-  case MODERN:
-    return new ModernFactory();
-  case VICTORIAN:
-    return new VictorianFactory();
+  public static FurnitureFactory create(Style style) throws Exception {
+    switch (style) {
+      case MODERN:
+        return new ModernFactory();
+      case VICTORIAN:
+        return new VictorianFactory();
+    }
+    throw new Exception("unknown");
+  }
 }
-throw new Exception ("unknown");
-}
-}
-
