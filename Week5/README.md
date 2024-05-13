@@ -1,3 +1,6 @@
+Quiz3
+implemnts 未清楚
+
 - collection最頂層
 可以new arraylis 放collection
 左手邊指針list只可以放arraylist , 不能放hashset限制給我們的東西
@@ -109,6 +112,75 @@ object reference -> object address 空指針
 
        ----------------------------
        MySQL
+       inner join  left right
+       one to many
+       one = primary key 獨一無二 (重複)
+       many = foreign key 可以重複, 
+       點解要加FOREIGN KEY 如果冇104
+       先customer才有order
+       order所以要有 
+       ***見工問foreign key 防守 保持數據 ** 價值
+       創建 department <- employee <-- 員工
+       UNIQUE 規矩
 
+       distinct 消除重複的資料 查詢唯一值 資料清理 一致性和準確性
+       COUNT() → This function returns the number of rows.
+       exists 只可以 p  #6 note 要放key = where 放條件
+       那個product買, for loop 想法
+       inner join 分別 p / o 找共同存在的
+       group by 
 
+       # Write your MySQL query statement below
 
+select u.name, sum(t.amount) as balance 選擇 U 名, T $$
+from users u inner join Transactions t on u.account = t.account   兩個ACCOUNT一樣 JOIN左先
+group by u.account -- 分一個ACCOUNT GROUP
+having sum(t.amount) >10000 在GROUP類拿 > 10000
+T 全部AMOUNT 一樣的相加, 再加GROUP拿出來
+order by  順次序
+foreign key 
+primary key 
+auto_increment 自動順序, 不可以重複
+
+在倉上找SELL - BUY 
+select stock_name, sum(if(operation ='sell', price ,-price)) as capital_gain_loss
+from stocks
+group by stock_name 按照這行分類
+where -- 使用條片
+-- CTE
+
+SELECT 列名
+FROM 表名
+WHERE 條件表達式;
+"constraint"（約束）
+email varhar(100) unique EMAIL不可以重複
+
+select name
+from employee
+where id in(
+    select managerid
+    from employee
+    group by managerid
+    having count(*)>=5
+)
+
+redundancy and inconsistency
+"（冗余）"（不一致）是
+
+with dept_highest_salary as (
+    select e.departmentId, max(e.salary) as max_salary
+    from employee e
+    group by e.departmentId
+)
+select d.name as Department, e.name as Employee, e.salary as Salary
+from employee e
+    inner join dept_highest_salary h on e.departmentId = h.departmentId
+    inner join department d on d.id = e.departmentId
+where e.salary = h.max_salary
+;
+
+main animal
+pig->
+small->pig
+
+JAVA = COMPLIE LACHTION

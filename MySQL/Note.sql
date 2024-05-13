@@ -250,18 +250,141 @@ create table order2 (
     delivery_address varchar(100),
     total_amount decimal(10,2)
     );
+    
+insert into customer3 values (1, 'Vincent', 'Lau', '852 12345678', 'vincent@gmail.com'),
+							 (2, 'Oscar', 'Lo', '852 87654321', 'oscar@gmail.com');
 
-insert into order2 values(1, 2, 'ABC XUZ', 100.44);
-insert into order2 values(2, 2, 'xxxABC XUZ', 22.88);
-insert into order2 values (3, 1, 'aaABC XYZ', 12.12);
-insert into order2 values (4, 3, 'aaAfffffBC XYZ', 90.12);
+insert into customer3 values (3, 'Jenny', 'Lau', ' 852 43121234 ', 'vincent@gmail.com');
 
--- inner join (multiply 2 set of records) 兩個合
-select* 
-from customer2 inner join order2;
+insert into order3 values (1, 2, 'ABC XYZ', 100.44);
+insert into order3 values (2, 2, 'xxxABC XYZ', 22.88);
+insert into order3 values (3, 1, 'aaABC XYZ', 12.12);
+insert into order3 values (4, 3, 'aaAfffffBC XYZ', 90.12);
 
--- inner join -> find all orders with it customer data 搵客資料
-select c.first_name, c.last_name, c.phone, c.email, o.total_amount, o.delivery_address
-from customer2 c inner join order2 o on c.id = o.customer_id -- on xxxxx, 比條 key裝往  customer_id, 如果唔係就相乘
-where o.total_amount > 30 -- join 後發生 excute after table join
+-- With Foreign Key: you cannnot add a child row with foreign key value not exists in parent primary key column
+insert into order3 values (5, 4, 'XYZ', 90.12); -- NOT OK
+
+create table customer3 (
+	id integer primary key auto_increment,
+	first_name varchar(20),
+    last_name varchar(20),
+	phone varchar(50),
+    email varchar(50)
+);
+
+create table order3 (
+	id integer auto_increment,
+    customer_id integer,
+    delivery_address varchar(100),
+    total_amount decimal(10,2),
+    primary key (id), -- another way to create primary key
+    constraint FK_CustomerOrder foreign key (customer_id) references customer3(id)
+);
+
+insert into customer3 values (1, 'Vincent', 'Lau', '852 12345678', 'vincent@gmail.com'),
+							 (2, 'Oscar', 'Lo', '852 87654321', 'oscar@gmail.com');
+
+insert into customer3 values (3, 'Jenny', 'Lau', ' 852 43121234 ', 'vincent@gmail.com');
+
+
+insert into order3 values (1, 2, 'ABC XYZ', 100.44);
+insert into order3 values (2, 2, 'xxxABC XYZ', 22.88);
+insert into order3 values (3, 1, 'aaABC XYZ', 12.12);
+insert into order3 values (4, 3, 'aaAfffffBC XYZ', 90.12);
+
+-- With Foreign Key: you cannnot add a child row with foreign key value not exists in parent primary key column
+insert into order3 values (5, 4, 'XYZ', 90.12); -- NOT OK customer 只有3  foreign key value
+
+
+-- Inner Join
+select c.first_name, c.last_name, o.delivery_address, o.total_amount
+from customer3 c inner join order3 o on c.id = o.customer_id;
+
+-- Left Join (all customers, no matter with orders or not)
+-- all data in customer3 retains in the result set.
+select c.first_name, c.last_name, o.delivery_address, ifnull(o.total_amount,0)
+from customer3 c left join order3 o on c.id = o.customer_id;
+
+-- Left Join (Customers without orders)
+-- similar to "NOT EXISTS"
+select c.first_name, c.last_name, o.delivery_address, ifnull(o.total_amount,0)
+from customer3 c left join order3 o on c.id = o.customer_id
+where o.customer_id is null
 ;
+-- Union /Union All
+
+select 'hello' as ab from dual
+union 
+select 'goodbye' as abc from dual;
+
+-- Apprend the wlhole result
+select 'hello' as ab from dual  -- 合拚
+union  all
+select 'hello' as abc from dual;
+
+-- apend the result , removing dupliacted
+select 'hello' as ab from dual
+union 
+select 'hello' as abc from dual;
+
+drop table student2;
+drop table teacher2;
+drop table subject2;
+drop table student_subject;
+
+create table student2(
+id integer primary key auto_increment,
+first_name varchar(20),
+last_name varchar(20)
+);
+
+create table subject2(
+id integer primary key auto_increment,
+description varchar(20)
+);
+
+create table student_subject2(
+id integer primary key auto_increment,
+subject_id integer not null,
+student_id integer
+);
+
+create table teacher2 (
+	id integer primary key auto_increment,
+    first_name varchar(20),
+    last_name varchar(20)
+);
+
+create table student_subject (
+id integer primary key auto_increment,
+student_id integer,
+subject_id integer,
+foreign key (student_id)  references student2(id),
+foreign key (subject_id)  references subject2(id)
+);
+
+insert into student2 values (1, 'Vincent', 'Lau');
+insert into student2 values (2, 'ABC', 'Chan');
+
+insert into subject2 values (1, 'Maths');
+insert into subject2 values (2, 'English');
+
+insert into student_subject values (1, 1, 2);
+
+insert into teacher2 values (1, 'XYZ', 'Lau');
+insert into teacher2 values (2, 'ABC', 'Chan');
+insert into teacher2 values (3, 'IJK', 'Lo');
+
+select first_name, last_name  -- CHECK名
+from student2
+union all
+select last_name, first_name
+from teacher2;
+
+create view student_view -- 可以控制唔比人睇
+as
+select * from student2 where last_name in ('Lau','Chan');
+
+select * from student_view;
+
+insert into student2 values (3, 'sally' , 'f');

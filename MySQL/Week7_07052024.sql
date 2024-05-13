@@ -13,7 +13,7 @@ Nationality varchar(2)
 create table winners (
 ID integer primary key auto_increment,
 Recipient integer not null,
-Year varchar(4) not null -- 留意
+year varchar(4) not null -- 留意
 );
 
 create table countries (
@@ -25,8 +25,6 @@ create table awards (
 ID integer primary key auto_increment,
 Main_contribution varchar(50)
 );
-
-select * from scientists;
 
 insert into scientists values (21, 'Shafrira', 'Lau', date_format('1953-12-31','%Y-%m-%d'), 'US');
 insert into scientists values (22, 'xxxx', 'Lau', date_format('1952-12-31','%Y-%m-%d'), 'UK');
@@ -56,19 +54,55 @@ insert into awards values ('2013', 'ijkijk');
 insert into awards values ('2014', 'pulu pulu');
 insert into awards values ('2015', 'ijk abc');
 
+select * from scientists;
+select * from awards;
+select * from winners;
+
 -- find the scientists getting the award in 2015, 
 -- show scientists first and last name and awards contubtion
 
-select scientists.First_name, scientists.Last_name, awards.Main_contribution
-from winner w
-       inner join scientissts s on w.recipient = s.id
-       inner join awards a on w.year = a.id
+select s.First_name, s.Last_name, a.Main_contribution
+from winners w
+       inner join scientists s on s.id  = w.recipient
+       inner join awards a on a.id = w.year
 where w.year = 2015;
 
+select * from order3;
+select *from customer3;
+
+-- without foreign key
+-- insert into order2 values (5, 99, 'asd', 12.33); -- customer2 table not have od 99
+
+alter table order2
+add foreign key (customer_id) references customer2(id);
 
 
-
-----
-from scientists s inner join winners w on s.id = w.recipient
-inner join awards a on w.year = a.id
-where w.year = 2015;
+create table customer3 (
+ id integer primary key auto_increment,
+ first_name varchar(20),
+ last_name varchar(20),
+ phone varchar(50),
+ email varchar(50)
+ );
+ 
+ create table order3 (
+    id integer primary key auto_increment,
+    customer_id integer,
+    delivery_address varchar(100),
+    total_amount decimal(10,2),
+    constraint FK_CustomerOrder foreign key (customer_id) references customer3(id)
+    );
+    
+    select c.first_name, c.last_name, o.deliver_address, o.total_amount
+    from custemer3 c inner join order3 o on c.id = o.custimer_id;
+    
+    -- Left Join (order3 數據保留)
+    select c.first_name, c.last_name, o.deliver_address, o.total_amount
+    from customer3 c left join order3 on c.id = o.customer_id;
+    
+    --- Left Join ( Custimers without orders)
+    select c.first_name, c.last_name, o.deliver_address, ifnull(o.total_amount,0)
+    from customer3 c left join order3 on c.id = o.customer_id
+    where o.customer_id is null;
+    
+    
