@@ -1,6 +1,5 @@
 package com.bootcamp.demo2403; //要溫書! STATIC 轉 INESCED
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -21,7 +20,7 @@ public class Customer {
     orders = new LinkedList<>();
   }
 
-  public void add(Order order) {
+  public void add(Order order) { // add order 入list
     orders.add(order);
   }
 
@@ -35,9 +34,16 @@ public class Customer {
 
   // static method: input parameter -> produce -> output
   // instance method: Class attribute -> similar to static method parameter
-  /* public static int orderCount(Customer customer) {
+  public static int orderCount(Customer customer) {
     return customer.orderCount();
-  } */
+  }
 
+  public static void main(String[] args) {
+    Customer c1 = new Customer("John");
+    Order order1 = new Order("efe");
+    c1.add(order1);
   
+    System.out.println(c1);
+  }
+
 }

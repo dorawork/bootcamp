@@ -5,8 +5,9 @@ public class Cat {
   private int age;
 
   public Cat(String name, int age) {
-    if (name == null)
-     throw new NullPointerException("namw cannot be");
+    if (name == null) {
+      throw new NullPointerException("namw cannot be");
+    }
     this.age = age;
     this.name = name;
   }

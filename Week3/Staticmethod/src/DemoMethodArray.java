@@ -22,20 +22,8 @@ public class DemoMethodArray {
 
     public static String trimSpace(String s){
       return s.replace(" " , " ");
-
     }
 
-  //return {"aa", "bbb"}
-  public static String [] trimSpace(String[] ss){ ..pass bu regrenec (addrss)
-    String []strings = new String (ss.length);
-    for (int i = 0 : i < string.length; i ++){
-      strings[i] = ss[1].replace("" , "");
-    }
-    return strings;
-  }
-
-  public static Ingerts = sum *
-  // Method: subTotal(double price, int quantity)
   public static double subTotal(double price, int quantity) {
     return price * quantity; // double value * double value
   }

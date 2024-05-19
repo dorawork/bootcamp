@@ -184,3 +184,22 @@ pig->
 small->pig
 
 JAVA = COMPLIE LACHTION
+
+week 8
+
+格式
+
+@AllArgsConstructor
+@RequiredArgsConstructor
+
+public class Student {
+  @Getter
+  @NonNull
+  private String name;
+  @Setter
+  private int age;}
+
+  TEST Core 同時兩個人做 , 後補TEST CASE 
+  day 2 maintreen維修 2000class / test case 加新野要全部試 2000class都要試
+  it用科學技術全部試一次 test case  maven
+  main core 理解

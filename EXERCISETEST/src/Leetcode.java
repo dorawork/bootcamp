@@ -37,3 +37,26 @@ public class Leetcode {
   }
 }
 }
+
+class Solution {
+  public int findGCD(int[] nums) {
+    int max = Integer.MIN_VALUE;
+    int min = Integer.MAX_VALUE;
+
+  for (int i = 0; i < nums.length ; i++){
+    if (nums[i]> max){
+      max = nums[i]
+    if (min < nums[i]){
+      nums[i] = min;
+    }
+    while(max % min !=0){
+      int temp = max % min;
+      max = min;
+      min = temp;
+    }
+    return min;
+      
+    }
+    }
+  }
+  }}

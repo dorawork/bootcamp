@@ -1,14 +1,15 @@
 use bootcamp_database_exercise1;
 -- ans 1,2
 create table regions(
-region_id integer primary key auto_increment,
-region_name varchar(25)
+region_id integer auto_increment,
+region_name varchar(25),
+CONSTRAINT PK_region_id PRIMARY KEY (region_id)
 );
 
 create table countries(
 country_id varchar (2) primary key,
 country_name varchar (40),
-region_id integer,
+region_id integer NOT NULL,
 constraint FK_region_id foreign key (region_id) references regions(region_id)
 );
 
@@ -108,10 +109,15 @@ INSERT INTO JOB_HISTORY (START_DATE, END_DATE, JOB_ID, DEPARTMENT_ID, EMPLOYEE_I
 
 
 select * from departments;
+select * from employees;
 
 -- 3
-select l.street_address, l.city, l.state_province, c.country_name 
+select l.location_id, l.street_address, l.city, l.state_province, c.country_name 
 from locations l left join countries c on l.country_id = c.country_id;
+
+SELECT L.location_id, L.street_address, L.city, L.state_province , C.COUNTRY_NAME
+FROM LOCATIONS L , COUNTRIES C
+WHERE L.COUNTRY_ID = C.COUNTRY_ID;
 
 -- 4
 select first_name, last_name, job_id, department_id from employees;
@@ -126,12 +132,16 @@ from employees e left join departments d on e.department_id = d.department_id
 -- 6 
 select employee_id, last_name, manager_id from employees;
 
+select e.employee_id, e.last_name, m.manager_id, m.last_name
+from employees e 
+				left join employees m on e.manager_id = m.manager_id;
+                
 
--- 7 方法錯??
-select  e.first_name, e.last_name
-from employees e
-join employees d on e.employee_id = d.employee_id 
-where e.hire_date >'1987-06-19';
+
+-- 7 
+select  first_name, last_name, hire_date
+from employees 
+where hire_date > (select hire_date from employees where last_name = 'De Haan');
 
 -- 8 
 select d.department_name, count(e.department_id) as number_of_employees
@@ -147,19 +157,19 @@ from employees e left join jobs j on e.job_id = j.job_id
                  and jh.start_date < (select max(start_date) from job_history)
                  group by e.employee_id, j.job_title, jh.start_date, jh.end_date;
                  
+                 select employee_id, job_id, datediff(start_date, end_date) as between_dates
+                 from job_history
+                 where department_id  =30;
+                 
 
--- 10  counties_name 未搵到
-with country_name as(
-	select c.country_name
-    from locations l 
-                   inner join countries c on l.country_id = c.country_id
-                   group by c.country_name
-)
-select d.department_name, concat(e.first_name,e.last_name) as manager_name, l.city
+-- 10  counties_name 
+
+select d.department_name, concat(e.first_name,e.last_name) as manager_name, l.city, c.country_name
 from departments d  
                    left join employees e on d.manager_id = e.manager_id
                    left join locations l on d.LOCATION_ID = l.LOCATION_ID
-				   group by d.department_name, concat(e.first_name,e.last_name), l.city;
+                   left join countries c on l.country_id = c.country_id;
+
                    
 -- 11 average salary each department
 select d.department_id, d.department_name, avg(j.max_salary)
@@ -167,6 +177,11 @@ from employees e
 				inner join jobs j on e.job_id = j.job_id
                 left  join departments d on e.department_id = d.department_id
 				group by d.department_id;
+                
+SELECT D.DEPARTMENT_NAME, AVG(E.SALARY) AS AVG_SALARY
+FROM DEPARTMENTS D
+LEFT JOIN EMPLOYEES E ON D.DEPARTMENT_ID = E.DEPARTMENT_ID
+GROUP BY D.DEPARTMENT_NAME;
 
 -- 12
 select j.job_id, j.job_title, j.min_salary, j.max_salary

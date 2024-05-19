@@ -6,7 +6,7 @@ public class Test {
 
   public static void main(String[] args) {
     Staff s1 = new Staff("Vincent", LocalDate.of(2013, 10, 1));
-    Staff s2 = new Staff("Vincent", LocalDate.of(2013, 10, 2));
+    Staff s2 = new Staff("Vincent", LocalDate.of(2013, 10, 1));
     System.out.println(s1.equals(s2)); // true
     System.out.println(s1 == s2); // false
 
@@ -30,10 +30,13 @@ public class Test {
     System.out.println(c1.equals(c2)); // true
 
     System.out.println(c1.orderCount()); // 1
-  }
+  
 
-  Staff t1 = Staff.builer() //
-  .name ("Vincet") //
-  .joinDate(LocalDate.of(2013,4,30))//
-  .build();
+  Staff t1 = Staff.builder() //
+      .name("Vincet") //
+      .joinDate(LocalDate.of(2013, 4, 30))//
+      .build();
+      
+      System.out.println(t1.toString());
+    }
 }

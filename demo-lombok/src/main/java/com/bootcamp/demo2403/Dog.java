@@ -22,13 +22,14 @@ public class Dog {
   // Custom Constructor
   public Dog() {
     this.name = "Sally";
-    this.age = 2 * 2;
+    this.age = 2 * 2;  
   }
 
   public static void main(String[] args) {
     Dog dog = new Dog("Vincent", 3);
     Dog dog2 = new Dog();
     dog.setAge(10);
-    System.out.println(dog.getAge()); // 10
+    System.out.println(dog2.getName()); // 10
+    
   }
 }

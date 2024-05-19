@@ -3,11 +3,9 @@ package com.bootcamp.demo2403;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @AllArgsConstructor
-@RequiredArgsConstructor
 
 public class Student {
 
@@ -23,6 +21,6 @@ public class Student {
   
   s1.setAge(5);
   
-  Student S2 = new Student("jokhk");
+  Student S2 = new Student("jokhk",76);
   }
 }
