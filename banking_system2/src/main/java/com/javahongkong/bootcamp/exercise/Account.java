@@ -8,7 +8,7 @@ public abstract class Account implements AccountInterface {
 	private int pin;
 	private double balance;
 
-	protected Account(AccountHolder accountHolder, int pin, double startingDeposit) {
+	protected Account(AccountHolder accountHolder,Long accountNumber, int pin, double startingDeposit) {
 		this.accountHolder = accountHolder;
 		this.accountNumber = accountNumber;
 		this.pin = pin;

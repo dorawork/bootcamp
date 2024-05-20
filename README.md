@@ -23,7 +23,7 @@ Atomicity -> 原子性 安全 慢
 
 stringbuilder - > 捉隻STRING不停放野入去
 
--「屬性」（attributes）對於一個名為「Person」的類別，它的屬性可以包括「姓名」、「年齡」、「性別」等。
+-「特徵」（attributes）對於一個名為「Person」的類別，它的屬性可以包括「姓名」、「年齡」、「性別」等。
 object reference -> object address 空指針
 
 
