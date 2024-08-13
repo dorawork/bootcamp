@@ -13,19 +13,19 @@ import lombok.ToString;
 
 public class Customer {
   private String name;
-  private List<Order> orders; // c1.getOrders().size()
+  private List<Order> orders1; // c1.getOrders().size()
 
   public Customer(String name) {
     name = this.name;
-    orders = new LinkedList<>();
+    orders1 = new LinkedList<>();
   }
 
   public void add(Order order) { // add order 入list
-    orders.add(order);
+    orders1.add(order);
   }
 
   public int orderCount() {
-    return this.getOrders().size();
+    return this.getOrders1().size();
   }
 
   public boolean isVIP() {

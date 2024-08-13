@@ -1,4 +1,4 @@
-package com.bootcamp.demo;
+package com.bootcamp;
 
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
-public class HamcrestTest {
+public class DmeoHancerstest {
 
   @Test
   void testString() {

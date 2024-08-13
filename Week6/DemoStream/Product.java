@@ -41,11 +41,11 @@ public int getQuantity(){
         List<String> result = products.stream()//
         .filter(e -> e.getPrice() > 1000)//
         .sorted((o1,o2) -> o1.getName().compareToIgnoreCase(o2.getName()))
-        .map (e - > e.getName)
+        .map (e -> e.getName)
         .collect (Collectors.toList());
 
         e.getName().concat("-")
-        .concat(String.valueOf(e.getQuantity()))) //
+        .concat(String.valueOf(e.getQuantity())) //
         //Stream
         //1. Filter all products with price >1000
         //2. sort ascending  order by name (done by lambda expression

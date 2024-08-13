@@ -203,3 +203,12 @@ public class Student {
   day 2 maintreen維修 2000class / test case 加新野要全部試 2000class都要試
   it用科學技術全部試一次 test case  maven
   main core 理解
+
+
+Exception
+
+infa file copy paste, 共用library
+return 結果?
+死物extends
+
+先寫inface

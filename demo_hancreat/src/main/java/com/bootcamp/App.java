@@ -1,4 +1,4 @@
-package demo_hancreat.src.main.java.com.bootcamp;
+package com.bootcamp;
 
 /**
  * Hello world!
